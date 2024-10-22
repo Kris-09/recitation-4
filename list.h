@@ -10,5 +10,8 @@
 struct list;
 
 struct list* list_setup();
+int list_next_and_get_value (struct list* list);
+int has_next(struct list* list);
+
 
 #endif

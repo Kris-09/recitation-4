@@ -14,15 +14,12 @@
 
 int main() {
   struct list* list = list_setup();
-  struct link* curr = list->head;  /* This line generates a compiler error. */
   int i = 0;
 
-  while (curr != NULL) {
-    /*
-     * The next two lines each generate a compiler error.
-     */
-    printf("== list[%2d]: %d\n", i, curr->val);
-    curr = curr->next;
+  while (has_next(list)) {
+    
+    int val = list_next_and_get_value(list);
+    printf("== list[%2d]: %d\n", i,val);
     i++;
   }
 

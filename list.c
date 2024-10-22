@@ -51,3 +51,13 @@ struct list* list_setup() {
   list->head = next;
   return list;
 }
+
+int list_next_and_get_value (struct list* list) {
+  int val = list->head->val;
+  list->head = list->head->next;
+  return val;
+}
+
+int has_next(struct list* list) {
+  return list->head != NULL;
+}
